@@ -19,7 +19,7 @@ var main = function(){
             $($newsArticle).append($linkDiv);
         
             title = newsStories[i].title;
-            $("<h2>"+title+"</h2>").appendTo($titleDiv);
+            $("<h3>"+title+"</h3>").appendTo($titleDiv);
         
             if(newsStories[i].multimedia !== ""){
                 imageUrl = newsStories[i].multimedia[0].url;
