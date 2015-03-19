@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>  
+  <head>
+      <title>New York Times Article Search</title>  
+      <link rel="stylesheet" type="text/css" href="StyleSheets/style.css">
+      <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="Scripts/search.js"></script>
+  </head>  
+  <body>
+    <nav>
+        <a href="index.html">Top Stories</a>|
+        <a href="about.html">About</a>|
+    </nav>
+      <h1>New York Times Article Search</h1>
+        <div class="userInput">
+          <h2>Article Search Parameters</h2>
+          <form>
+              Keyword:<br>
+              <input type="text" name="keyWord" id="keyword">
+              <br>
+              Start Date(YYYYMMDD):<br>
+              <input type="text" name="startDate" id="startDate">
+              <br>
+              End Date(YYYYMMDD):<br>
+              <input type="text" name="endDate" id="endDate">
+              <br>
+              Sort Order:<br>
+              <select id="sortOrder">
+                  <option value="newest">Newest</option>
+                  <option value="oldest">Oldest</option>
+              </select>
+          </form>
+          <button>Search!</button>
+        </div>
+      <main>
+          <h2>Articles Found:</h2>
+          <div class="returnedData">
+          </div>
+      </main>
+  </body>  
+</html> 
