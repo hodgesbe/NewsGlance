@@ -3,18 +3,29 @@ var main = function(){
         var newsStories = topStories.results,
             abstract = "",
             imageUrl = "",
-            $newsArticle = $("<article>");
+            title = "",
+            $newsArticle = $("<article>"),
+            $imageDiv = $("<div class = \"image\"></div> "),
+            $titleDiv = $("<div class = \"title\"></div>"),
+            $abstractDiv = $("<div class = \"abstract\"></div>");
         
         for (var i = 0; i<newsStories.length; i++){
+            $newsArticle = $("<article>");
+            abstract = "";
+            title = "";
+            imageUrl = "";
             console.log(newsStories[i]);
             abstract = newsStories[i].abstract;
             if(newsStories[i].multimedia !== ""){
                 imageUrl = newsStories[i].multimedia[0].url
             }
-            $("<img src="+imageUrl+"><br>").appendTo($newsArticle);
-            $("<p>"+abstract+"</p><br>").appendTo($newsArticle);
-        }
+            title = newsStories[i].title;
+            $("<h2>"+title+"</h2>").appendTo($titleDiv).appendTo($newsArticle);
+            $("<img src="+imageUrl+"><br>").appendTo($imageDiv).appendTo($newsArticle);
+            $("<p>"+abstract+"</p><br>").appendTo($abstractDiv).appendTo($newsArticle);
             $(".topStories").append($newsArticle);
+        }
+            //$(".topStories").append($newsArticle);
     });
 };
 $(document).ready(main);
