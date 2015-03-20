@@ -7,6 +7,7 @@ var main = function(){
         sort = "";
     
         $(".userInput button").on("click", function(event){
+            $("main .returnedData").empty();
             searchKeyword = $("#keyword").val();
             beginDate = $("#startYear").val()+$("#startMonth").val()+"01";
             endDate = $("#endYear").val()+$("#endMonth").val()+"01";
