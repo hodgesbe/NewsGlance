@@ -4,6 +4,10 @@ background-color:#f8f9ff;
 
 }
 
+nav {
+	text-align: center;
+	padding: 10px;
+}
 
 
 @font-face {
@@ -13,5 +17,10 @@ background-color:#f8f9ff;
 
 h1 {
    font-family: OldEnglishRegular;
-    font-size: 300%;
+   font-size: 300%;
+}
+
+form: startMonth, startYear {
+	margin: 25px;
+	padding: 10px;
 }
