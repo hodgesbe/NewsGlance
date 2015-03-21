@@ -6,13 +6,8 @@ var main = function(){
         endDate = "",
         sort = "";
     
-        $(".userInput button").on("click", function(event){
-            returnSearchData();
-        });
-
-
-var returnSearchData = function () {
-            $("main .returnedData").empty();
+        $("#submit").on("click", function(event){
+            $(".returnedData").empty();
             searchKeyword = $("#keyword").val();
             beginDate = $("#startYear").val()+$("#startMonth").val()+"01";
             endDate = $("#endYear").val()+$("#endMonth").val()+"01";
@@ -21,7 +16,7 @@ var returnSearchData = function () {
             console.log(beginDate,endDate);
             
             $.getJSON("http://api.nytimes.com/svc/search/v2/articlesearch.json?&             q="+searchKeyword+"&sort="+sort+"&begin_date="+beginDate+"&end_date="+endDate+"&callback=sv c_search_v2_articlesearch&api-key="+searchAPIKey, function (data) {
-                
+       
                 var retrievedData = data.response.docs;    
         
                 for (var i = 0; i < retrievedData.length; i++){
@@ -46,14 +41,14 @@ var returnSearchData = function () {
                         $("<p>"+leadParagraph+"</p>").appendTo($abstractDiv);
 
                         url = retrievedData[i].web_url;
-                        $("<a href="+url+">Link to article</a>").appendTo($linkDiv);
+                        $("<a href="+url+">Link to full New York Times article</a>").appendTo($linkDiv);
 
                         $(".returnedData").append($newsArticle);                    
-                    
                 }
         
         });
         
-    };
+    });
+    
 };
 $(document).ready(main);
