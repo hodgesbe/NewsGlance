@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html>  
   <head>
-      <title>New York Times Article Search</title>  
+      <title>News Glance: Search</title>
+      <link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
       <link rel="stylesheet" type="text/css" href="StyleSheets/style.css">
+      <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,900' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+      
+      
       <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="Scripts/search.js"></script>
   </head>  
   <body>
-    <nav>
-        <a href="index.html">Top Stories</a>|
-        <a href="about.html">About</a>|
-    </nav>
-      <h1>New York Times Article Search</h1>
+      <div class="header">
+      <h1>News Glance: New York Times Article Search</h1>
+        <h4>Powered by: The New York Times</h4>      
+          <nav>
+            <a href="index.html">Top Stories</a>
+            <a href="about.html">About</a>
+          </nav>
+      </div>  
+      
         <div class="userInput">
           <h2>Article Search Parameters</h2>
-            <form>
+            <form id="inputForm">
+                
+                <div id="search">
                 Keyword:
                 <input type="text" name="keyWord" id="keyword">
                 <br>
+                </div>
                 
+                <div id="sDate">
                 Start Date (Month/Year):
                 <select id="startMonth">
                     <option value="01">January</option>
@@ -58,7 +71,9 @@
                     <option value="2015">2015</option>                    
                 </select> 
                 <br>
+                </div>
                 
+                <div id="eDate">
                 End Date(Month/Year):
                 <select id="endMonth">
                     <option value="01">January</option>
@@ -98,18 +113,22 @@
                     <option value="2015">2015</option>                    
                 </select> 
                 <br>
+                </div>
                 
+                <div id="sort">
                 Sort Order:
                 <select id="sortOrder">
                     <option value="newest">Newest</option>
                     <option value="oldest">Oldest</option>
-                </select>                
+                </select>
+                </div>
+                
             </form>
 
-          <button>Search!</button>
+          <button id="submit">Search!</button>
         </div>
       <main>
-          <h2>Articles Found:</h2>
+          <h2 id="returnedTitle">Articles Found:</h2>
           <div class="returnedData">
           </div>
       </main>
