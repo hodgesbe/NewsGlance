@@ -22,7 +22,7 @@ var main = function(){
             $("<h3>"+title+"</h3>").appendTo($titleDiv);
         
             if(newsStories[i].multimedia !== ""){
-                imageUrl = newsStories[i].multimedia[0].url;
+                imageUrl = newsStories[i].multimedia[newsStories[i].multimedia.length-1].url;
                 $("<img src="+imageUrl+"><br>").appendTo($imageDiv);
             }
         
@@ -30,7 +30,7 @@ var main = function(){
             $("<p>"+abstract+"</p>").appendTo($abstractDiv);
         
             url = newsStories[i].url;
-            $("<a href="+url+">Link to article</a>").appendTo($linkDiv);
+            $("<a href="+url+">Link to full New York Times article</a>").appendTo($linkDiv);
         
             $(".topStories").append($newsArticle);
         
