@@ -26,6 +26,13 @@
 *{
     background-image: url(white-paper-seamless-pattern-for-website-background.jpg);
 }
+
+a:hover {
+	color: #cc0000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
 .header{
     text-align: center;
     font-family: OldEnglishRegular;
