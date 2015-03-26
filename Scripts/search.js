@@ -9,19 +9,25 @@ var main = function(){
         $("#submit").on("click", function(event){
             returnSearchData();
         });
-            
-            
+           
+    
+  $(document).keypress(function(e) {
+      if(e.which == 13) {   
+          returnSearchData();
+          return false;
+      }
+  });
             
             
     var returnSearchData = function() {
-            
             $(".returnedData").empty();
             searchKeyword = $("#keyword").val();
             beginDate = $("#startYear").val()+$("#startMonth").val()+"01";
             endDate = $("#endYear").val()+$("#endMonth").val()+"31";
             sort = $("#sortOrder").val();
             
-            console.log(beginDate,endDate);
+            console.log(beginDate,endDate); 
+            
             
             $.getJSON("http://api.nytimes.com/svc/search/v2/articlesearch.json?&q="+
                       searchKeyword+"&sort="+sort+"&begin_date="+beginDate+
